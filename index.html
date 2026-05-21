@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Grumpy Chef</title>
+  <meta name="description" content="Super Grumpy Chef — No fluff. Just flavour.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="Super Grumpy Chef home">
+      <!-- SVG logo placeholder: replace with final SVG -->
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5"/>
+        <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle"
+              font-family="Georgia, serif" font-size="14" fill="currentColor">SGC</text>
+      </svg>
+      <span class="logo-text">Super Grumpy Chef</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#reservations">Reserve</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button data-theme-toggle aria-label="Switch to light mode" class="theme-toggle"></button>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Est. 2024 · Dawson City, YT</p>
+        <h1 class="hero-title">Super<br><em>Grumpy</em><br>Chef</h1>
+        <p class="hero-tagline">No fluff. Just flavour.</p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+          <a href="#reservations" class="btn btn-secondary">Reserve a Table</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>The Chef Behind the Grump</h2>
+          <p>Twenty years in professional kitchens has a way of stripping out the nonsense. No molecular foam. No three-word menus. Just honest cooking — seasonal, precise, and cooked by someone who actually gives a damn.</p>
+          <p>Super Grumpy Chef is where craft meets candour. Come for the food. Stay because nothing else in town comes close.</p>
+          <blockquote>"I don't do 'elevated.' I do delicious."</blockquote>
+        </div>
+        <div class="about-image" aria-hidden="true"><!-- Chef photo --></div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2>The Menu</h2>
+        <div class="menu-filter" role="tablist" aria-label="Menu categories">
+          <button class="tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="tab" data-filter="starters" role="tab" aria-selected="false">Starters</button>
+          <button class="tab" data-filter="mains" role="tab" aria-selected="false">Mains</button>
+          <button class="tab" data-filter="desserts" role="tab" aria-selected="false">Desserts</button>
+          <button class="tab" data-filter="drinks" role="tab" aria-selected="false">Drinks</button>
+        </div>
+        <div class="menu-grid" id="menu-grid">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVATIONS -->
+    <section id="reservations" class="reservations container">
+      <h2>Reserve a Table</h2>
+      <form id="reservation-form" novalidate>
+        <div class="form-row">
+          <label for="res-name">Name</label>
+          <input type="text" id="res-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="res-date">Date</label>
+          <input type="date" id="res-date" name="date" required>
+        </div>
+        <div class="form-row">
+          <label for="res-time">Time</label>
+          <input type="time" id="res-time" name="time" required>
+        </div>
+        <div class="form-row">
+          <label for="res-guests">Guests</label>
+          <select id="res-guests" name="guests">
+            <option>1</option><option>2</option><option selected>3-4</option>
+            <option>5-6</option><option>7+</option>
+          </select>
+        </div>
+        <div class="form-row form-row--full">
+          <label for="res-notes">Notes (optional)</label>
+          <textarea id="res-notes" name="notes" rows="3" placeholder="Dietary requirements, occasions…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Request Reservation</button>
+      </form>
+      <div id="reservation-confirm" class="reservation-confirm" hidden>
+        <p>✓ Request received! We'll confirm within 24 hours.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container">
+      <div class="contact-grid">
+        <div>
+          <h2>Find Us</h2>
+          <address>
+            <p>123 Front Street<br>Dawson City, Yukon YOB 1G0</p>
+            <p>Tue–Sat: 5pm – 10pm<br>Sun–Mon: Closed</p>
+            <p><a href="tel:+18675551234">(867) 555-1234</a></p>
+          </address>
+        </div>
+        <div class="map-placeholder" aria-label="Map placeholder"><!-- Embed Google Maps here --></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2024 Super Grumpy Chef · Dawson City, YT</p>
+    <nav aria-label="Footer navigation">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </nav>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
